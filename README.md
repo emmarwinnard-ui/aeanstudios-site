@@ -22,3 +22,10 @@ The menu, footer, newsletter strip and newsletter popup are repeated in every pa
 
 ## Forms
 Netlify Forms are detected from the HTML at deploy time (`newsletter` and `founders-table-interest`).
+
+## Plan builder
+`plan.html` lets visitors describe their business and get a tailored plan.
+- Services, descriptions and prices: `js/plan-catalogue.js` (the only place prices live; `from: null` shows "priced after a quick chat").
+- The AI: `netlify/functions/plan.mjs`, served at `/api/plan`. It needs an `ANTHROPIC_API_KEY` environment variable in Netlify. `PLAN_MODEL` optionally changes the model.
+- Without the key, or if the AI fails, `js/plan-rules.js` builds the plan instead, so the page always works.
+- Sent plans arrive as Netlify form submissions under `plan-request`.

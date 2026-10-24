@@ -2,3 +2,9 @@
 [build]
   publish = "."
   command = ""
+
+# The plan builder's AI function (netlify/functions/plan.mjs), served at /api/plan.
+# It needs ANTHROPIC_API_KEY set under Site configuration > Environment variables.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"

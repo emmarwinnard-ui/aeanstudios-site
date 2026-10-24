@@ -78,7 +78,7 @@ const PACKAGES = {
   },
   other:        { unit: 'project', label: 'Something else',     items: [] }
 };
-const ESTIMATE_NOTE = 'All prices are estimates, and every project is quoted properly once we have spoken.';
+const ESTIMATE_NOTE = 'All prices are estimates, and I'll give you an exact quote once we've spoken.';
 
 (() => {
   const root = document.getElementById('brief');

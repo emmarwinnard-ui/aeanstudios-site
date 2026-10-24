@@ -6,6 +6,7 @@
 /websites   /websites.html   200
 /ai   /ai.html   200
 /privacy   /privacy.html   200
+/plan   /plan.html   200
 /founders-table /founders-table/ 301
 
 # Keep repository housekeeping files off the public site

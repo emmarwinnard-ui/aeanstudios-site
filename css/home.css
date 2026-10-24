@@ -474,3 +474,6 @@ body { background: var(--ink); color: var(--stone); }
   .work-grid .work-card:nth-child(n+5) { display: none; }
   .social-spotlight-media { display: none; }
 }
+
+.get-started-or { margin-top: 1.8rem !important; color: var(--stone) !important; }
+.get-started-actions .btn { align-self: flex-start; }

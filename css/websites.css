@@ -92,3 +92,26 @@
 .ws-case-text p + p { margin-top: 1rem; }
 
 .ws-live-link { display: inline-block; margin-top: 1.4rem; color: var(--bronze-light); }
+
+/* ---------- Featured site and phone mockups (October 2026) ---------- */
+.ws-feature { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; margin-bottom: clamp(4rem, 9vw, 7rem); padding-bottom: clamp(3rem, 6vw, 5rem); border-bottom: 1px solid rgba(181,177,167,.16); }
+.ws-feature-media > .ws-case-media { box-shadow: 0 30px 70px rgba(0,0,0,.4); }
+.ws-feature-media img, .ws-case-stack img { display: block; width: 100%; height: auto; }
+.ws-feature-thumbs { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(.8rem, 1.6vw, 1.2rem); margin-top: clamp(.8rem, 1.6vw, 1.2rem); }
+.ws-feature-thumbs figure { margin: 0; }
+.ws-feature-thumbs figcaption { padding: .7rem .9rem; font-size: .82rem; color: var(--stone); border-top: 1px solid rgba(181,177,167,.16); }
+.ws-feature-text h3 { font-size: clamp(2.2rem, 3.6vw, 3rem); }
+.ws-case-stack { position: relative; padding-right: clamp(2.5rem, 7vw, 6rem); padding-bottom: 2rem; }
+.ws-phone { position: absolute !important; right: 0; bottom: 0; width: clamp(110px, 17%, 190px) !important; border: 6px solid #0b0f0d; border-radius: 22px; box-shadow: 0 24px 50px rgba(0,0,0,.5); }
+.ws-case-thumbs--one { grid-template-columns: 1fr; }
+.ws-case--flip .ws-case-stack { order: 2; }
+.ws-case--flip .ws-case-text { order: 1; }
+@media (max-width: 960px) {
+  .ws-feature { grid-template-columns: 1fr; }
+  .ws-case--flip .ws-case-stack { order: 0; }
+}
+@media (max-width: 520px) {
+  .ws-feature-thumbs { grid-template-columns: 1fr; }
+  .ws-case-stack { padding-right: 3.2rem; }
+  .ws-phone { width: 96px !important; border-width: 4px; border-radius: 14px; }
+}
