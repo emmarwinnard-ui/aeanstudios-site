@@ -118,7 +118,7 @@ body .nav-links a, body .nav-mark, body .nav-burger span { color: var(--ink); }
 }
 .np-link:hover { background: var(--ivory-dim); }
 .np-link.np-next { text-align: right; align-items: flex-end; border-left: 1px solid rgba(58,53,48,0.16); }
-.np-link .eyebrow { color: var(--bronze-deep); }
+.np-link .eyebrow { color: var(--bronze-text); }
 .np-link h4 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
 @media (max-width: 700px) {
   .project-nextprev { grid-template-columns: 1fr; }
