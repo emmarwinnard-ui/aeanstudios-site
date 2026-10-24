@@ -1,0 +1,145 @@
+/* ============================================
+   AEAN STUDIOS — PROJECT CASE STUDY TEMPLATE
+   ============================================ */
+
+body { background: var(--ivory); color: var(--char); }
+body .nav-links a, body .nav-mark, body .nav-burger span { color: var(--ink); }
+
+.project-hero {
+  position: relative;
+  height: 92vh;
+  height: 92dvh;
+  min-height: 560px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.project-hero img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.project-hero-veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(15,21,18,0.58) 0%, rgba(15,21,18,0.22) 18%, rgba(15,21,18,0.2) 45%, rgba(15,21,18,0.88) 100%);
+}
+.project-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-bottom: clamp(2.5rem, 6vw, 4.5rem);
+  color: var(--ivory);
+}
+.project-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-label);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bronze-light);
+  margin-bottom: 1.6rem;
+}
+.project-back svg { width: 13px; height: 13px; }
+.project-hero-content h1 {
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  line-height: 1;
+}
+.project-meta-row {
+  display: flex;
+  gap: clamp(2rem, 5vw, 4rem);
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.project-meta-item .eyebrow { color: var(--bronze-light); margin-bottom: 0.4rem; display: block; }
+.project-meta-item p { font-size: 0.95rem; color: var(--stone); max-width: 280px; }
+
+.project-intro {
+  padding: clamp(4rem, 9vw, 7rem) 0;
+}
+.project-intro-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.6fr;
+  gap: 3rem;
+}
+.project-intro .eyebrow { color: var(--bronze-deep); }
+.project-intro-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  line-height: 1.5;
+  font-weight: 400;
+}
+@media (max-width: 880px) {
+  .project-intro-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+}
+
+.project-gallery {
+  display: grid;
+  gap: 1.4rem;
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+.project-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--ivory-dim);
+}
+.g-full { grid-column: 1 / -1; aspect-ratio: 16/9; }
+.g-half { aspect-ratio: 4/5; }
+.g-wide { grid-column: 1 / -1; aspect-ratio: 16/8; }
+.g-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; grid-column: 1/-1; }
+.gallery-row-2 { grid-template-columns: 1fr 1fr; }
+.gallery-row-3 { grid-template-columns: 1fr 1fr 1fr; }
+@media (max-width: 700px) {
+  .gallery-row-2, .gallery-row-3, .g-2col { grid-template-columns: 1fr; }
+}
+
+.project-cta {
+  background: var(--ink);
+  color: var(--ivory);
+  padding: clamp(4rem, 8vw, 6rem) 0;
+  text-align: center;
+}
+.project-cta h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.4rem; }
+.project-cta .btn { margin-top: 0.6rem; }
+
+.project-nextprev {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(58,53,48,0.16);
+}
+.np-link {
+  padding: clamp(2.2rem, 5vw, 3.5rem) var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: background 0.4s var(--ease);
+}
+.np-link:hover { background: var(--ivory-dim); }
+.np-link.np-next { text-align: right; align-items: flex-end; border-left: 1px solid rgba(58,53,48,0.16); }
+.np-link .eyebrow { color: var(--bronze-deep); }
+.np-link h4 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
+@media (max-width: 700px) {
+  .project-nextprev { grid-template-columns: 1fr; }
+  .np-link.np-next { border-left: none; border-top: 1px solid rgba(58,53,48,0.16); text-align: left; align-items: flex-start; }
+}
+
+/* ---- cross-link to related pages ---- */
+.project-crosslink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bronze-light);
+  border: 1px solid rgba(181,177,167,0.25);
+  padding: 0.7rem 1.1rem;
+  transition: border-color 0.2s ease;
+  text-decoration: none;
+}
+.project-crosslink:hover { border-color: var(--bronze-light); }
+.project-crosslink svg { width: 12px; height: 12px; }

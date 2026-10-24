@@ -1,0 +1,30 @@
+/* ============================================
+   AEAN STUDIOS — MOBILE SAFETY NET
+   Every page sets its own display-heading size, and several pages'
+   minimum clamp() bound stays fixed all the way down to a 320px phone.
+   That's fine with a narrow fallback font, but the actual display font
+   (Didot on Apple devices, wide even before the sitewide 0.025em
+   letter-spacing is added) needs more room and can wrap hard enough to
+   grow past its box on a real phone. These rules cap the worst offenders
+   on narrow screens regardless of which page or font is involved.
+   ============================================ */
+@media (max-width: 480px) {
+  h1 {
+    font-size: clamp(2rem, 9vw, 2.75rem) !important;
+    letter-spacing: 0.01em !important;
+  }
+  h2 {
+    font-size: clamp(1.6rem, 7.5vw, 2.2rem) !important;
+  }
+
+  /* Homepage animated logo lockup: the tagline's generous desktop
+     letter-spacing is what pushes it to 3 lines on a phone, growing
+     tall enough to collide with the hero copy anchored below it. */
+  .hero-logo-tagline {
+    font-size: 0.64rem !important;
+    letter-spacing: 0.08em !important;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

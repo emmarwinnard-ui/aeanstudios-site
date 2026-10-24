@@ -1,0 +1,371 @@
+/* ============================================
+   KNIGHT ERRANT — case study micro-theme
+   Palette: void black, charcoal, parchment gold,
+   silver-grey, ember. Feels like a manuscript
+   that has been on a battlefield.
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+
+body.ke-page {
+  --ke-void: #080809;
+  --ke-char: #0F0F12;
+  --ke-slate: #1A1A20;
+  --ke-parchment: #C8B47A;
+  --ke-parchment-dim: #8A7B52;
+  --ke-parchment-bright: #DDD09A;
+  --ke-silver: #C4C2CC;
+  --ke-silver-dim: #7A7880;
+  --ke-ember: #8B4E1E;
+  --ke-mist: #A09FA8;
+  background: var(--ke-void);
+  color: var(--ke-mist);
+}
+
+/* ---------- canvas starfield (reused from main) ---------- */
+.ke-page .site-nav { position: fixed; z-index: var(--z-nav); }
+.ke-page .site-nav.is-scrolled { background: rgba(8,8,9,0.9); backdrop-filter: blur(12px); }
+
+/* ---------- hero ---------- */
+.ke-hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  overflow: hidden;
+  background: var(--ke-void);
+}
+.ke-hero-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 90% 70% at 30% 50%, rgba(26,26,32,0.9) 0%, rgba(8,8,9,1) 60%);
+  z-index: 1;
+}
+.ke-hero-cover {
+  grid-column: 2;
+  position: relative;
+  z-index: 2;
+  padding: clamp(6rem, 10vw, 9rem) clamp(2rem, 4vw, 4rem) clamp(4rem, 8vw, 7rem) 0;
+  display: flex;
+  justify-content: center;
+}
+.ke-hero-cover img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  display: block;
+  box-shadow: -32px 0 80px rgba(0,0,0,0.7), 0 0 60px rgba(200,180,122,0.08);
+}
+.ke-hero-content {
+  grid-column: 1;
+  position: relative;
+  z-index: 2;
+  padding: clamp(7rem, 12vw, 10rem) var(--gutter) clamp(4rem, 8vw, 7rem) var(--gutter);
+}
+.ke-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ke-silver-dim);
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  transition: color 0.2s ease;
+}
+.ke-back:hover { color: var(--ke-parchment); }
+.ke-back svg { width: 13px; height: 13px; }
+
+.ke-kicker {
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ke-parchment-dim);
+  margin-bottom: 1rem;
+}
+.ke-title {
+  font-family: 'IM Fell English', 'Bodoni Moda', serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: clamp(3.8rem, 9vw, 7.5rem);
+  line-height: 0.88;
+  color: var(--ke-parchment-bright);
+  text-shadow: 0 0 60px rgba(200,180,122,0.25), 0 2px 0 rgba(0,0,0,0.8);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.7rem;
+}
+.ke-title span { display: block; }
+.ke-subhead {
+  font-family: var(--font-label);
+  font-size: clamp(0.78rem, 1.2vw, 0.95rem);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ke-parchment-dim);
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+.ke-meta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.ke-eyebrow {
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ke-parchment-dim);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+.ke-meta-item p {
+  font-size: 0.92rem;
+  color: var(--ke-silver);
+}
+.ke-rule {
+  width: 60px; height: 1px;
+  background: var(--ke-parchment-dim);
+  opacity: 0.5;
+  margin: clamp(2rem, 4vw, 3rem) 0;
+}
+@media (max-width: 900px) {
+  .ke-hero { grid-template-columns: 1fr; grid-template-rows: auto auto; }
+  .ke-hero-content { grid-column: 1; grid-row: 1; padding-bottom: 1rem; }
+  .ke-hero-cover { grid-column: 1; grid-row: 2; padding: 0 var(--gutter) clamp(3rem, 7vw, 5rem); justify-content: flex-start; }
+  .ke-hero-cover img { max-width: 280px; }
+}
+
+/* ---------- section scaffolding ---------- */
+.ke-section { position: relative; z-index: 1; }
+
+.ke-intro { padding: clamp(4.5rem, 9vw, 7rem) 0; }
+.ke-intro-grid {
+  display: grid;
+  grid-template-columns: 0.7fr 1.6fr;
+  gap: 3rem;
+}
+.ke-intro-text {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+  line-height: 1.5;
+  color: var(--ke-parchment-bright);
+}
+.ke-intro-body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ke-mist);
+  max-width: 60ch;
+  margin-top: 1.2rem;
+}
+@media (max-width: 880px) {
+  .ke-intro-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+}
+
+/* ---------- design notes strip ---------- */
+.ke-log {
+  padding: clamp(3rem, 6vw, 4.5rem) 0;
+  border-top: 1px solid rgba(200,180,122,0.12);
+  border-bottom: 1px solid rgba(200,180,122,0.12);
+}
+.ke-log-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+.ke-log-item {
+  border-left: 1px solid var(--ke-parchment-dim);
+  padding-left: 1.4rem;
+  opacity: 0.7;
+}
+.ke-log-item .ke-eyebrow { margin-bottom: 0.6rem; }
+.ke-log-item p { font-size: 0.92rem; line-height: 1.65; color: var(--ke-mist); }
+@media (max-width: 880px) { .ke-log-grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+/* ---------- process steps ---------- */
+.ke-process { padding: clamp(4rem, 9vw, 7rem) 0; }
+.ke-process-heading {
+  font-family: 'IM Fell English', serif;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  color: var(--ke-parchment-bright);
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+  font-weight: 400;
+}
+.ke-step {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  margin-bottom: clamp(4rem, 8vw, 6rem);
+  align-items: start;
+}
+.ke-step.ke-step-flip {
+  grid-template-columns: 1.3fr 1fr;
+}
+.ke-step.ke-step-flip .ke-step-img { order: 2; }
+.ke-step.ke-step-flip .ke-step-body { order: 1; }
+
+/* two-image side by side within a step */
+.ke-step-img-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+.ke-step-img,
+.ke-step-img-pair figure {
+  margin: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid rgba(200,180,122,0.15);
+  background: var(--ke-char);
+  box-shadow: 0 20px 48px -20px rgba(0,0,0,0.8);
+}
+.ke-step-img img,
+.ke-step-img-pair figure img { display: block; width: 100%; height: auto; }
+
+.ke-step-body { padding-top: 0.3rem; }
+.ke-step-num {
+  font-family: 'IM Fell English', serif;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  color: rgba(200,180,122,0.12);
+  line-height: 1;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.02em;
+}
+.ke-step-label {
+  display: block;
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ke-parchment-dim);
+  margin-bottom: 0.9rem;
+}
+.ke-step-title {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: var(--ke-parchment-bright);
+  margin-bottom: 1.1rem;
+  line-height: 1.35;
+  font-weight: 400;
+}
+.ke-step-body p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--ke-mist);
+  max-width: 52ch;
+}
+.ke-step-body p + p { margin-top: 0.9rem; }
+.ke-step-tag {
+  display: inline-block;
+  margin-top: 1.2rem;
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ke-parchment-dim);
+  border: 1px solid rgba(200,180,122,0.3);
+  padding: 0.3rem 0.8rem;
+}
+@media (max-width: 900px) {
+  .ke-step, .ke-step.ke-step-flip { grid-template-columns: 1fr; }
+  .ke-step.ke-step-flip .ke-step-img { order: 0; }
+  .ke-step.ke-step-flip .ke-step-body { order: 0; }
+}
+
+/* ---------- final gallery ---------- */
+.ke-gallery { padding: 0 0 clamp(4rem, 8vw, 6rem); }
+.ke-gallery-row {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+  align-items: flex-start;
+}
+.ke-gallery-row > * { flex: 1 1 0; min-width: 0; }
+.ke-frame {
+  margin: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid rgba(200,180,122,0.12);
+  background: var(--ke-char);
+  box-shadow: 0 20px 48px -20px rgba(0,0,0,0.7);
+}
+.ke-frame img { display: block; width: 100%; height: auto; }
+/* stop small mockup images stretching past their native size */
+.ke-frame img[src$=".png"] { width: auto; max-width: 100%; display: block; margin: 0 auto; }
+.ke-frame figcaption {
+  padding: 0.7rem 0.1rem 0;
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ke-parchment-dim);
+  opacity: 0.7;
+}
+@media (max-width: 720px) { .ke-gallery-row { flex-direction: column; } }
+
+/* ---------- cta ---------- */
+.ke-cta {
+  background: var(--ke-char);
+  padding: clamp(4.5rem, 9vw, 7rem) 0;
+  text-align: center;
+  border-top: 1px solid rgba(200,180,122,0.12);
+}
+.ke-cta h2 {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--ke-parchment-bright);
+  font-weight: 400;
+  margin-bottom: 1.8rem;
+}
+.ke-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.95rem 1.9rem;
+  background: transparent;
+  border: 1px solid var(--ke-parchment-dim);
+  color: var(--ke-parchment-bright);
+  font-family: var(--font-label);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.ke-btn:hover { background: var(--ke-parchment-dim); color: var(--ke-void); }
+
+/* ---------- next/prev ---------- */
+.ke-nextprev {
+  display: flex;
+  border-top: 1px solid rgba(200,180,122,0.12);
+  background: var(--ke-void);
+}
+.ke-np-link {
+  flex: 1;
+  padding: clamp(2rem, 5vw, 3rem) var(--gutter);
+  transition: background 0.2s ease;
+}
+.ke-np-link:hover { background: rgba(200,180,122,0.04); }
+.ke-np-link .ke-eyebrow { margin-bottom: 0.5rem; }
+.ke-np-link h4 {
+  font-family: 'IM Fell English', serif;
+  font-weight: 400;
+  font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+  color: var(--ke-parchment-bright);
+}
+.ke-np-next { text-align: right; border-left: 1px solid rgba(200,180,122,0.12); }
+@media (max-width: 700px) {
+  .ke-nextprev { flex-direction: column; }
+  .ke-np-next { border-left: none; border-top: 1px solid rgba(200,180,122,0.12); text-align: left; }
+}
+
+/* scroll seal tint */
+body.ke-page .scroll-seal .progress { stroke: var(--ke-parchment-dim); }

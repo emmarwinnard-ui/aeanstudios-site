@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Winnard;Emma;;;
+FN:Emma Winnard
+ORG:AEAN Studios
+TITLE:Graphic Designer & Creative Director
+TEL;TYPE=CELL,VOICE:+447931627612
+EMAIL;TYPE=INTERNET,PREF:hello@aeanstudios.com
+URL:https://aeanstudios.com
+ADR;TYPE=WORK:;;Wigan;Greater Manchester;;;United Kingdom
+NOTE:Visual identity\, illustration and image-led design.
+END:VCARD

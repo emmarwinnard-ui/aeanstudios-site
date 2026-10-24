@@ -1,0 +1,93 @@
+/* ============================================
+   AEAN STUDIOS — NEWSLETTER
+   ============================================ */
+
+.newsletter-section {
+  padding: 0 0 clamp(5rem, 10vw, 8rem);
+}
+.newsletter-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(3rem, 6vw, 5rem);
+  align-items: start;
+}
+.newsletter-points {
+  list-style: none;
+  margin: 1.8rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.newsletter-points li {
+  display: flex;
+  gap: 0.9rem;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--stone);
+}
+.newsletter-points li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 6px; height: 6px;
+  margin-top: 0.55rem;
+  background: var(--bronze);
+  border-radius: 50%;
+}
+
+.newsletter-card {
+  background: var(--ink-soft);
+  border: 1px solid rgba(181,177,167,0.16);
+  padding: clamp(2rem, 4vw, 2.8rem);
+}
+.newsletter-card .eyebrow { color: var(--bronze-light); margin-bottom: 0.6rem; }
+.newsletter-card h2 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); color: var(--ivory); margin-bottom: 1.6rem; }
+.newsletter-card label {
+  display: block;
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone-dim);
+  margin-bottom: 0.5rem;
+}
+.newsletter-card input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(181,177,167,0.35);
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  padding: 0.6rem 0;
+  margin-bottom: 1.5rem;
+  color: var(--ivory);
+}
+.newsletter-card input:focus { outline: none; border-color: var(--bronze); }
+.newsletter-card-submit {
+  width: 100%;
+  background: var(--bronze);
+  color: var(--ivory);
+  border: none;
+  padding: 1rem;
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s var(--ease);
+}
+.newsletter-card-submit:hover { background: var(--bronze-deep); }
+.newsletter-card .fine-print {
+  margin-top: 1rem;
+  font-size: 0.76rem;
+  color: var(--stone-dim);
+  line-height: 1.5;
+}
+.newsletter-card .success-msg { display: none; text-align: center; padding: 1rem 0; }
+.newsletter-card .success-msg.show { display: block; }
+.newsletter-card .success-msg .seal-mini { margin: 0 auto 1rem; width: 52px; height: auto; }
+.newsletter-card.is-success form { display: none; }
+
+@media (max-width: 880px) {
+  .newsletter-grid { grid-template-columns: 1fr; }
+}

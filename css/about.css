@@ -1,0 +1,202 @@
+/* ============================================
+   AEAN STUDIOS — ABOUT / BRAND STORY
+   ============================================ */
+
+.about-hero {
+  position: relative;
+  padding: clamp(9.5rem, 16vw, 13rem) 0 clamp(5rem, 9vw, 7rem);
+  overflow: hidden;
+}
+.about-hero h1 {
+  font-size: clamp(2.6rem, 6.4vw, 5rem);
+  color: var(--ivory);
+  line-height: 1.08;
+  max-width: 900px;
+}
+.about-hero .eyebrow { color: var(--bronze-light); margin-bottom: 1.2rem; }
+.about-hero-seal {
+  position: absolute;
+  right: clamp(-40px, 2vw, 40px);
+  top: clamp(40px, 8vw, 90px);
+  width: clamp(140px, 16vw, 220px);
+  opacity: 0.9;
+  color: var(--bronze);
+}
+.about-hero-seal svg { width: 100%; height: 100%; }
+.about-hero-seal { display: flex; align-items: center; justify-content: center; }
+.about-hero-seal .ring-outer { fill: none; stroke: currentColor; stroke-width: 0.5; opacity: 0.5; }
+.about-hero-seal .ring-inner { fill: none; stroke: currentColor; stroke-width: 0.5; opacity: 0.3; }
+.about-seal-lion {
+  position: absolute;
+  width: 46%;
+  height: auto;
+  opacity: 0.95;
+}
+@media (max-width: 880px) {
+  .about-hero-seal { display: none; }
+}
+
+/* ---------- Myth section ---------- */
+.myth-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: center;
+}
+.myth-illustration {
+  position: relative;
+}
+.myth-illustration img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: saturate(0.9) brightness(0.98);
+  border: 1px solid rgba(181,177,167,0.25);
+}
+.myth-caption {
+  display: block;
+  margin-top: 0.8rem;
+  font-family: var(--font-label);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--stone-dim);
+}
+.myth-text .eyebrow { color: var(--bronze-light); margin-bottom: 1rem; }
+.myth-lead {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  line-height: 1.4;
+  color: var(--ivory);
+  margin-bottom: 1.6rem;
+  font-weight: 400;
+}
+.myth-text p:not(.eyebrow):not(.myth-lead) {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--stone);
+  margin-bottom: 1.2rem;
+  max-width: 540px;
+}
+@media (max-width: 880px) {
+  .myth-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Philosophy pull quote ---------- */
+.philosophy-pull { text-align: center; }
+.philosophy-pull-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.6vw, 2.8rem);
+  line-height: 1.4;
+  color: var(--ivory);
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ---------- Lion section ---------- */
+.lion-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+}
+.lion-media { position: relative; overflow: hidden; }
+.lion-media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: saturate(0.85) brightness(0.92);
+}
+.lion-content {
+  background: var(--ink-soft);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: clamp(2.5rem, 6vw, 5rem);
+}
+.lion-content .eyebrow { color: var(--bronze-light); }
+.lion-content h2 { font-size: clamp(2rem, 4vw, 3.1rem); color: var(--ivory); line-height: 1.15; }
+.lion-content p { font-size: 1rem; line-height: 1.75; color: var(--stone); max-width: 420px; }
+@media (max-width: 880px) {
+  .lion-section { grid-template-columns: 1fr; }
+  .lion-media { aspect-ratio: 4/3; }
+}
+
+/* ---------- Sketchbook ---------- */
+.sketchbook .section-head, .sketchbook .container { margin-bottom: 0; }
+.sketchbook .eyebrow { color: var(--bronze-light); margin-bottom: 1rem; }
+.sketchbook h2 { color: var(--ivory); font-size: var(--size-h2); margin-bottom: 2.5rem; }
+.sketchbook-strip {
+  display: flex;
+  gap: 1.4rem;
+  padding: 0 var(--gutter);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.sketchbook-strip::-webkit-scrollbar { display: none; }
+.sketch-item {
+  flex: 0 0 clamp(260px, 30vw, 380px);
+}
+.sketch-item img {
+  width: 100%;
+  filter: saturate(0.92);
+  border: 1px solid rgba(181,177,167,0.2);
+}
+
+/* ---------- Process ---------- */
+.process-list { border-top: 1px solid rgba(181,177,167,0.18); }
+.process-row {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  gap: 2rem;
+  padding: 2.2rem 0;
+  border-bottom: 1px solid rgba(181,177,167,0.18);
+  align-items: baseline;
+}
+.process-row h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  color: var(--bronze-light);
+  font-style: italic;
+}
+.process-row p { font-size: 0.96rem; line-height: 1.7; color: var(--stone); max-width: 540px; }
+@media (max-width: 700px) {
+  .process-row { grid-template-columns: 1fr; gap: 0.6rem; }
+}
+
+/* ---------- Founder note ---------- */
+.founder-grid {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: center;
+}
+.founder-media {
+  aspect-ratio: 1/1;
+  background: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(181,177,167,0.2);
+}
+.founder-watermark { width: 55%; opacity: 0.85; }
+.founder-text .eyebrow { color: var(--bronze-light); margin-bottom: 1rem; }
+.founder-lead {
+  font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+  line-height: 1.45;
+  color: var(--ivory);
+  margin-bottom: 1.4rem;
+}
+.founder-text p:not(.eyebrow):not(.founder-lead) {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--stone);
+  margin-bottom: 1.4rem;
+  max-width: 500px;
+}
+.founder-text .text-link { color: var(--bronze-light); }
+@media (max-width: 880px) {
+  .founder-grid { grid-template-columns: 1fr; }
+  .founder-media { max-width: 280px; }
+}

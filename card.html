@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Cookie-consent-gated analytics: see js/consent.js -->
+<script src="js/consent.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Emma Winnard | AEAN Studios</title>
+<meta name="description" content="Save Emma Winnard's contact details, get in touch, or follow AEAN Studios.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://aeanstudios.com/card">
+<link rel="icon" type="image/png" href="assets/logos/favicon-source.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/mobile-safety.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/card.css">
+</head>
+<body class="dark-page card-page">
+
+<div class="seal-loader">
+  <div class="seal-loader-inner">
+    <img src="assets/logos/lion_mark_only_ivory.png" alt="" class="seal-loader-lion">
+    <div class="seal-loader-rule"></div>
+  </div>
+</div>
+
+<main class="card-shell">
+
+  <div class="card-seal reveal">
+    <svg viewBox="0 0 220 220" aria-hidden="true">
+      <circle class="ring-outer" cx="110" cy="110" r="106"/>
+      <circle class="ring-inner" cx="110" cy="110" r="92"/>
+    </svg>
+    <img src="assets/logos/lion_mark_only_ivory.png" alt="" class="card-seal-lion">
+  </div>
+
+  <p class="eyebrow card-eyebrow reveal">AEAN Studios</p>
+  <h1 class="card-name reveal">Emma Winnard</h1>
+  <p class="card-role reveal">Graphic Design &amp; Creative Direction</p>
+
+  <div class="card-actions reveal">
+    <a href="emma-winnard.vcf" class="btn btn-bronze card-btn-primary">
+      Save My Contact
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    <div class="card-actions-row">
+      <a href="mailto:hello@aeanstudios.com" class="btn btn-dark card-outline">Email</a>
+      <a href="tel:+447931627612" class="btn btn-dark card-outline">Call / Text</a>
+    </div>
+  </div>
+
+  <div class="card-socials reveal">
+    <p class="eyebrow card-eyebrow">Find the Studio</p>
+    <div class="card-social-grid">
+      <a href="https://www.instagram.com/aeanstudios/" target="_blank" rel="noopener" class="card-social-item">
+        <span>Instagram</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+      </a>
+      <a href="https://www.behance.net/emmawinnard1" target="_blank" rel="noopener" class="card-social-item">
+        <span>Behance</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/emma-winnard-676113319" target="_blank" rel="noopener" class="card-social-item">
+        <span>LinkedIn</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+      </a>
+      <a href="https://shopbrandedbyem.etsy.com" target="_blank" rel="noopener" class="card-social-item">
+        <span>Etsy Templates</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <a href="index.html" class="card-portfolio-link reveal">View Full Portfolio &rarr;</a>
+
+</main>
+
+<footer class="card-footer">
+  Wigan, Greater Manchester &middot; &copy; 2026 AEAN Studios
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const loader = document.querySelector('.seal-loader');
+  if (loader) {
+    window.addEventListener('load', () => {
+      setTimeout(() => loader.classList.add('is-hidden'), 260);
+    });
+    setTimeout(() => loader.classList.add('is-hidden'), 900);
+  }
+
+  const revealEls = document.querySelectorAll('.reveal');
+  revealEls.forEach((el, i) => {
+    setTimeout(() => el.classList.add('is-visible'), 120 + i * 90);
+  });
+});
+</script>
+
+</body>
+</html>

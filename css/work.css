@@ -1,0 +1,85 @@
+/* ============================================
+   AEAN STUDIOS — WORK ARCHIVE
+   ============================================ */
+
+/* archive-header, .eyebrow, h1, .archive-sub now defined in components.css (shared across pages) */
+
+.filter-bar {
+  display: flex;
+  gap: 0.8rem;
+  padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  flex-wrap: wrap;
+}
+.filter-pill {
+  font-family: var(--font-label);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone-dim);
+  background: transparent;
+  border: 1px solid rgba(181,177,167,0.3);
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.35s var(--ease);
+}
+.filter-pill:hover { color: var(--ivory); border-color: var(--bronze); }
+.filter-pill.is-active { background: var(--bronze); color: var(--ink); border-color: var(--bronze); }
+
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  padding-bottom: clamp(4rem, 8vw, 6rem);
+}
+.archive-card { display: block; }
+.archive-card.is-hidden { display: none; }
+.archive-card-img {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: var(--ink-soft);
+}
+.archive-card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease), filter 0.8s var(--ease);
+  filter: saturate(0.94);
+}
+.archive-card:hover .archive-card-img img { transform: scale(1.05); }
+.archive-card-meta {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(181,177,167,0.16);
+  padding-bottom: 1rem;
+}
+.archive-card-meta h3 { font-size: 1.05rem; color: var(--ivory); font-weight: 400; }
+.archive-card-meta p { font-size: 0.78rem; color: var(--stone-dim); text-align: right; }
+
+@media (max-width: 1080px) {
+  .archive-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px) {
+  .archive-grid { grid-template-columns: 1fr; }
+}
+
+.archive-cta { border-top: 1px solid rgba(181,177,167,0.16); }
+.archive-cta-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+}
+.archive-cta-link {
+  border: 1px solid rgba(181,177,167,0.25);
+  padding: 2.2rem;
+  transition: background 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+.archive-cta-link:hover { background: var(--ink-soft); border-color: var(--bronze); }
+.archive-cta-link h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); color: var(--ivory); font-weight: 400; }
+@media (max-width: 700px) {
+  .archive-cta-row { grid-template-columns: 1fr; }
+}

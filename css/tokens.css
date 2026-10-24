@@ -1,0 +1,168 @@
+/* ============================================
+   AEAN STUDIOS — DESIGN TOKENS
+   Palette: Forest Ink / Mist Ivory / Deep Fern / Warm Stone / Moss Slate / Muted Brass
+   ============================================ */
+
+:root {
+  /* Color — AEAN Brand Colour System 1.0 */
+  --ink: #0F1512;             /* Forest Ink — primary dark */
+  --ink-soft: #1A2320;        /* secondary dark surface, derived from Forest Ink */
+  --ivory: #E8E5DE;           /* Mist Ivory — primary light */
+  --ivory-dim: #DDD9CF;       /* secondary light surface */
+  --stone: #B5B1A7;           /* Warm Stone — hairlines on dark, muted text on light */
+  --stone-dim: #8B8A82;       /* derived secondary text */
+  --bronze: #A18B64;          /* Muted Brass — accent */
+  --bronze-light: #C2AD83;    /* accent highlight, lightened brass */
+  --bronze-deep: #7C6A4A;     /* accent shadow, deepened brass */
+  --char: #243329;            /* Deep Fern — body text on ivory, secondary dark */
+  --slate: #5C635D;           /* Moss Slate — secondary text / borders */
+
+  /* Gradients */
+  --gradient-bronze: linear-gradient(135deg, #C2AD83 0%, #A18B64 45%, #7C6A4A 100%);
+  --gradient-fade-dark: linear-gradient(180deg, rgba(15,21,18,0) 0%, rgba(15,21,18,0.92) 100%);
+  --gradient-fade-light: linear-gradient(180deg, rgba(232,229,222,0) 0%, rgba(232,229,222,0.96) 100%);
+
+  /* Type — Didot for expressive display (falls back to Bodoni Moda, the
+     closest free web Didone to true Didot, on systems without Didot installed),
+     Libre Franklin for labels/body */
+  --font-display: Didot, 'Bodoni Moda', Georgia, serif;
+  --font-body: 'Libre Franklin', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-label: 'Libre Franklin', sans-serif;
+
+  /* Type scale */
+  --size-hero: clamp(3.2rem, 9vw, 8.5rem);
+  --size-display: clamp(2.4rem, 5.6vw, 4.6rem);
+  --size-h2: clamp(1.9rem, 3.4vw, 2.8rem);
+  --size-h3: clamp(1.3rem, 2vw, 1.7rem);
+  --size-body-lg: clamp(1.05rem, 1.3vw, 1.25rem);
+  --size-body: 1rem;
+  --size-label: 0.78rem;
+  --size-micro: 0.68rem;
+
+  /* Spacing */
+  --gutter: clamp(1.5rem, 5vw, 4.5rem);
+  --section-pad: clamp(5rem, 11vw, 10rem);
+  --radius: 2px;
+
+  /* Motion — more expressive, less timid */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 0.4s;
+  --dur-med: 0.85s;
+  --dur-slow: 1.6s;
+
+  /* Z */
+  --z-cursor: 9999;
+  --z-nav: 500;
+  --z-overlay: 1000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root { --color-scheme: dark; }
+}
+
+* { box-sizing: border-box; }
+
+/* Prevent grid/flex items with images from overflowing their track
+   (default min-width:auto on grid items uses content size, not track size) */
+.archive-card, .archive-card-img, .work-card, .m-item, .thumb-tile,
+.g-half, .logo-tile, .connect-item, .process-compare-item {
+  min-width: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--char);
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  font-weight: 300;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+body.dark-page {
+  background: var(--ink);
+  color: var(--stone);
+}
+
+img, video { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+::selection {
+  background: var(--bronze);
+  color: var(--ivory);
+}
+
+:focus-visible {
+  outline: 1.5px solid var(--bronze);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+p { margin: 0; }
+
+.eyebrow {
+  font-family: var(--font-label);
+  font-size: var(--size-label);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.serif-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+}
+
+/* Custom scrollbar - subtle */
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--stone); border-radius: 10px; }
+body.dark-page::-webkit-scrollbar-thumb { background: var(--stone-dim); }

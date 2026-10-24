@@ -1,0 +1,7 @@
+# Guarantees /newsletter resolves even if the account-level
+# "Pretty URLs" setting (Site configuration > Build & deploy >
+# Post processing) is ever turned off. 200 = serve the file's
+# content directly, no visible redirect.
+/newsletter   /newsletter.html   200
+/websites   /websites.html   200
+/founders-table /founders-table/ 301
