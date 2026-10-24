@@ -25,7 +25,7 @@ const PACKAGES = {
     items: [
       { name: 'Logo Design', low: 50, high: 200,
         desc: 'Custom logo and mark design for businesses that need a memorable visual starting point.' },
-      { name: 'Brand Identity', low: 250, high: 500,
+      { name: 'Brand Identity', low: 100, high: 500,
         desc: 'Logo, colour palette, typography and brand guidelines for a complete and consistent visual identity.' }
     ]
   },
@@ -43,7 +43,7 @@ const PACKAGES = {
     unit: 'month', label: 'Social media & content',
     note: 'Price depends on platform count and content volume.',
     items: [
-      { name: 'Social Media Management', low: 300, high: 300, per: 'month',
+      { name: 'Social Media Management', low: 120, high: null, per: 'month',
         desc: 'Posting-only support with captions, scheduling and regular publishing across agreed platforms.' },
       { name: 'Content Creation', low: 300, high: 1000, per: 'month',
         desc: 'A fuller service covering strategy, filming, editing, captions, scheduling and posting.' },

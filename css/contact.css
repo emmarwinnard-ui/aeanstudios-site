@@ -202,3 +202,6 @@
 .pb-chips-small { margin: .4rem 0 .6rem; gap: .45rem; }
 .pb-chips-small .pb-chip span { padding: .55rem .85rem; font-size: .84rem; }
 .pb-pkg-scope { font-size: .88rem; line-height: 1.6; color: var(--ivory); margin: .9rem 0 0; }
+
+.pb-privacy { margin-top: 1.4rem; font-size: 0.82rem; color: var(--stone); }
+.pb-privacy a { color: var(--bronze-light); text-decoration: underline; text-underline-offset: 2px; }

@@ -376,7 +376,7 @@ body.cc-page .site-nav.is-scrolled { background: rgba(6,7,13,0.86); backdrop-fil
 figcaption.cc-cap {
   margin-top: 0.7rem;
   font-family: var(--font-label);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--cc-mist-dim);

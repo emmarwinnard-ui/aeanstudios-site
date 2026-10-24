@@ -90,3 +90,5 @@
   .ws-stats, .ws-steps { grid-template-columns: 1fr; }
 }
 .ws-case-text p + p { margin-top: 1rem; }
+
+.ws-live-link { display: inline-block; margin-top: 1.4rem; color: var(--bronze-light); }

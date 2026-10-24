@@ -179,3 +179,18 @@
   .notes-nextprev { grid-template-columns: 1fr; }
   .notes-np-link.notes-np-next { border-left: none; border-top: 1px solid rgba(181,177,167,0.16); text-align: left; align-items: flex-start; }
 }
+
+/* evidence label and source list (added October 2026) */
+.article-evidence { display: inline-block; font-family: var(--font-label); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bronze-light); border: 1px solid rgba(194,173,131,0.4); padding: 0.35rem 0.7rem; margin-bottom: 1rem !important; }
+.article-sources { font-size: 0.9rem; }
+.article-sources li { margin-bottom: 0.6rem; }
+.article-body ol { margin: 0 0 1.2rem 1.3rem; }
+.article-body td:first-child { color: var(--ivory); }
+@media (max-width: 640px) {
+  .article-body table, .article-body tbody, .article-body tr, .article-body td { display: block; width: 100%; }
+  .article-body thead { display: none; }
+  .article-body tr { padding: 1rem 0; border-bottom: 1px solid rgba(181,177,167,0.16); }
+  .article-body td { border: none !important; padding: 0.2rem 0 !important; }
+  .article-body td:first-child { font-family: var(--font-display); font-size: 1.15rem; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .article-body td[data-label]:not([data-label=""]):not(:first-child)::before { content: attr(data-label); display: block; font-family: var(--font-label); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bronze-light); margin-top: 0.5rem; }
+}

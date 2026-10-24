@@ -13,7 +13,12 @@ Netlify is connected to this repository. Every push to `main` deploys the live s
 - `js/newsletter.js`: newsletter sign-up form and popup (sends to MailerLite, backup copy to Netlify Forms)
 - `css/tokens.css`: brand colours, type and spacing
 - `assets/`: images, logos and video; `assets/email/` holds images used in emails
-- `_redirects`: Netlify redirects
+- `_redirects`: Netlify redirects (also hides this README and netlify.toml from the public site)
+- `assets/og/`: 1200 x 630 share images used in each page's Open Graph tags
+- `privacy.html` and `ai.html`: privacy policy and design and AI statement, linked from every footer
+
+## Shared blocks
+The menu, footer, newsletter strip and newsletter popup are repeated in every page rather than included, so a change to any of them has to be made in every `.html` file (the founders-table and card pages have their own designs and are the exceptions).
 
 ## Forms
 Netlify Forms are detected from the HTML at deploy time (`newsletter` and `founders-table-interest`).

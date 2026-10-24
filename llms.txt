@@ -1,23 +1,28 @@
 # AEAN Studios
 
-> AEAN Studios is a UK-based creative studio run by Emma Winnard. It mainly offers website design and development, book cover design and social media management, alongside brand identity design, illustration, content creation, YouTube thumbnail design and photography for brands and small businesses. All work is delivered remotely to clients anywhere.
+> AEAN Studios is a design studio in Wigan, Greater Manchester, run by Emma Winnard. It designs websites and social media for small businesses, and book covers and YouTube thumbnails for independent authors and creators, alongside logos, brand identity and brand photography. Clients are mainly in the North West of England and across the UK.
 
-## Services
+## For small businesses
 
-- [Website Design](https://aeanstudios.com/websites): Custom-coded websites for small businesses, structured for search engines (SEO) and AI answer engines (AEO). From £200 for a single-page site; the price covers design and code only, with domain, hosting and paid third-party tools separate.
-- [Social Media Management & Content Creation](https://aeanstudios.com/social-media): Strategy, content planning, content design, captions, scheduling, outreach and community management for businesses, handled end to end.
-- [Brand Identity & Logo Design](https://aeanstudios.com/logos): Marks, systems and visual identities built for brands.
-- [Photography](https://aeanstudios.com/photography): Image-led brand and campaign photography.
-- [YouTube Thumbnails](https://aeanstudios.com/thumbnails): High-impact, click-worthy thumbnail design.
-- [Selected Work](https://aeanstudios.com/work): Portfolio of brand identity, illustration, book cover and social content projects.
+- [Website Design](https://aeanstudios.com/websites): Custom websites for small businesses, set up for search engines (SEO) and AI answer engines (AEO). From £200 for a single-page site; the price covers design and build only, with domain, hosting and paid third-party tools separate.
+- [Social Media Management](https://aeanstudios.com/social-media): Planning, designing and posting from £120 a month, with filming days and full week-to-week management quoted on top.
+- [Logos and Brand Identity](https://aeanstudios.com/logos): Logos from £50 and brand identities from £100.
+- [Brand Photography](https://aeanstudios.com/photography): Half-day and full-day shoots around Wigan for spaces, products and social content.
+
+## For authors and creators
+
+- [Book Cover Design](https://aeanstudios.com/book-covers): Cover art and typography for independent authors. Ebook covers from £100, with paperback wraps and print files priced on top.
+- [YouTube Thumbnails](https://aeanstudios.com/thumbnails): Custom thumbnails from £50.
 
 ## About
 
-- [The Studio](https://aeanstudios.com/about): Studio philosophy and background on founder Emma Winnard, graphic designer, illustrator and art director.
-- [Contact](https://aeanstudios.com/contact): How to start a project, plus frequently asked questions.
-- [Newsletter](https://aeanstudios.com/newsletter): Sign up for practical design and marketing tips for small business owners.
+- [About](https://aeanstudios.com/about): Who runs the studio and how a project runs.
+- [Selected Work](https://aeanstudios.com/work): Book covers, brand identities and campaign design.
+- [Studio Notes](https://aeanstudios.com/notes): Articles on websites, social media and marketing for small businesses.
+- [Design and AI](https://aeanstudios.com/ai): All client design work is original; where AI is used in running the studio.
+- [Start a project](https://aeanstudios.com/contact): Project brief with price estimates, plus frequently asked questions.
 
 ## Contact
 
 Email: hello@aeanstudios.com
-Based in the UK. Works with clients remotely, worldwide.
+Based in Wigan, Greater Manchester, UK. Works in person locally and remotely elsewhere.

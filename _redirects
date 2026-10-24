@@ -4,4 +4,10 @@
 # content directly, no visible redirect.
 /newsletter   /newsletter.html   200
 /websites   /websites.html   200
+/ai   /ai.html   200
+/privacy   /privacy.html   200
 /founders-table /founders-table/ 301
+
+# Keep repository housekeeping files off the public site
+/README.md   /   301!
+/netlify.toml   /   301!

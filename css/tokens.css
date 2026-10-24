@@ -14,6 +14,7 @@
   --bronze: #A18B64;          /* Muted Brass — accent */
   --bronze-light: #C2AD83;    /* accent highlight, lightened brass */
   --bronze-deep: #7C6A4A;     /* accent shadow, deepened brass */
+  --bronze-text: #6E5D3F;     /* brass for small text on light backgrounds (5:1 on Mist Ivory) */
   --char: #243329;            /* Deep Fern — body text on ivory, secondary dark */
   --slate: #5C635D;           /* Moss Slate — secondary text / borders */
 
@@ -25,7 +26,7 @@
   /* Type — Didot for expressive display (falls back to Bodoni Moda, the
      closest free web Didone to true Didot, on systems without Didot installed),
      Libre Franklin for labels/body */
-  --font-display: Didot, 'Bodoni Moda', Georgia, serif;
+  --font-display: 'Bodoni Moda', Didot, Georgia, serif;
   --font-body: 'Libre Franklin', -apple-system, 'Helvetica Neue', Arial, sans-serif;
   --font-label: 'Libre Franklin', sans-serif;
 
@@ -37,7 +38,7 @@
   --size-body-lg: clamp(1.05rem, 1.3vw, 1.25rem);
   --size-body: 1rem;
   --size-label: 0.78rem;
-  --size-micro: 0.68rem;
+  --size-micro: 0.72rem;
 
   /* Spacing */
   --gutter: clamp(1.5rem, 5vw, 4.5rem);
@@ -166,3 +167,7 @@ p { margin: 0; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--stone); border-radius: 10px; }
 body.dark-page::-webkit-scrollbar-thumb { background: var(--stone-dim); }
+
+/* Keep the side gutter on every .container, even where a section rule
+   resets padding with the shorthand (e.g. "padding: 4rem 0"). */
+.container.container { padding-left: var(--gutter); padding-right: var(--gutter); }

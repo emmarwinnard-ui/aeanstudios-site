@@ -103,3 +103,6 @@
   text-transform: uppercase;
   color: var(--stone-dim);
 }
+
+.thumb-tile { position: relative; }
+.thumb-credit { position: absolute; left: 0; right: 0; bottom: 0; padding: 0.5rem 0.8rem; font-size: 0.76rem; letter-spacing: 0.04em; color: var(--ivory); background: linear-gradient(180deg, rgba(15,21,18,0) 0%, rgba(15,21,18,0.85) 100%); }

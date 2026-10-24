@@ -121,3 +121,15 @@
   margin: 0 auto 2rem;
   line-height: 1.7;
 }
+
+/* ---------- Booking a shoot (October 2026) ---------- */
+.photo-offer { border-top: 1px solid rgba(181,177,167,0.14); }
+.photo-offer-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(2rem, 6vw, 6rem); }
+.photo-offer .eyebrow { color: var(--bronze-light); margin-bottom: 1rem; }
+.photo-offer h2 { font-size: var(--size-h2); color: var(--ivory); line-height: 1.1; }
+.photo-offer-row { padding: 1.6rem 0; border-bottom: 1px solid rgba(181,177,167,0.18); display: grid; grid-template-columns: 1fr auto; gap: 0.4rem 1.5rem; }
+.photo-offer-row:first-child { border-top: 1px solid rgba(181,177,167,0.18); }
+.photo-offer-row h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); color: var(--ivory); }
+.photo-offer-price { color: var(--bronze-light); font-size: 1rem; margin: 0; }
+.photo-offer-row p:last-child { grid-column: 1 / -1; color: var(--stone); line-height: 1.65; margin: 0; max-width: 520px; }
+@media (max-width: 880px) { .photo-offer-grid { grid-template-columns: 1fr; } }

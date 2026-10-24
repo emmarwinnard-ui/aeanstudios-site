@@ -254,3 +254,8 @@
   margin: 0 auto 2rem;
   line-height: 1.7;
 }
+/* behind-the-scenes pair: two wide frames across the container instead of two small tiles */
+.sm-bts .sm-showcase-strip { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(0.8rem, 1.6vw, 1.4rem); max-width: 1480px; margin: 0 auto; overflow: visible; }
+.sm-bts .sm-showcase-item { flex: none; aspect-ratio: 3/2; }
+.sm-bts .sm-showcase-item:last-child { aspect-ratio: auto; }
+@media (max-width: 620px) { .sm-bts .sm-showcase-strip { grid-template-columns: 1fr; } .sm-bts .sm-showcase-item:last-child { aspect-ratio: 3/2; } }

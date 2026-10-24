@@ -115,7 +115,7 @@ body.ke-page {
 }
 .ke-eyebrow {
   font-family: var(--font-label);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--ke-parchment-dim);
@@ -266,7 +266,7 @@ body.ke-page {
   display: inline-block;
   margin-top: 1.2rem;
   font-family: var(--font-label);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ke-parchment-dim);
@@ -302,7 +302,7 @@ body.ke-page {
 .ke-frame figcaption {
   padding: 0.7rem 0.1rem 0;
   font-family: var(--font-label);
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ke-parchment-dim);

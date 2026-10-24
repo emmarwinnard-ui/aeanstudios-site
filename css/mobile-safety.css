@@ -21,8 +21,8 @@
      letter-spacing is what pushes it to 3 lines on a phone, growing
      tall enough to collide with the hero copy anchored below it. */
   .hero-logo-tagline {
-    font-size: 0.64rem !important;
-    letter-spacing: 0.08em !important;
+    font-size: 0.7rem !important;
+    letter-spacing: 0.06em !important;
     max-width: 280px;
     margin-left: auto;
     margin-right: auto;

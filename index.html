@@ -5,9 +5,19 @@
 <script src="js/consent.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AEAN Studios | Website Design, Book Covers &amp; Social Media Management</title>
-<meta name="description" content="AEAN Studios designs websites built to be found on Google and in AI answers, book covers for independent authors, and social media management for small businesses, alongside brand identity and photography.">
+<title>AEAN Studios | Websites, Social Media, Book Covers &amp; Thumbnails</title>
+<meta name="description" content="AEAN Studios is a design studio in Wigan making websites and social media for small businesses, and book covers and YouTube thumbnails for authors and creators. Websites from £200.">
 <link rel="canonical" href="https://aeanstudios.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AEAN Studios">
+<meta property="og:title" content="AEAN Studios | Websites, Social Media, Book Covers &amp; Thumbnails">
+<meta property="og:description" content="AEAN Studios is a design studio in Wigan making websites and social media for small businesses, and book covers and YouTube thumbnails for authors and creators. Websites from £200.">
+<meta property="og:url" content="https://aeanstudios.com/">
+<meta property="og:image" content="https://aeanstudios.com/assets/og/aean-studios.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/logos/favicon-source.png">
 <script type="application/ld+json">
 {
@@ -17,9 +27,10 @@
   "url": "https://aeanstudios.com/",
   "logo": "https://aeanstudios.com/assets/logos/wordmark_only.png",
   "image": "https://aeanstudios.com/assets/logos/wordmark_only.png",
-  "description": "AEAN Studios is a UK-based creative studio offering website design and development, book cover design, social media management, brand identity design, illustration, book cover design, social media management, content creation, YouTube thumbnails and photography for brands and small businesses.",
+  "description": "AEAN Studios is a design studio in Wigan, UK, making websites and social media for small businesses, and book covers and YouTube thumbnails for authors and creators, alongside logos, brand identity and photography.",
   "email": "mailto:hello@aeanstudios.com",
   "areaServed": "GB",
+  "address": { "@type": "PostalAddress", "addressLocality": "Wigan", "addressRegion": "Greater Manchester", "addressCountry": "GB" },
   "founder": {
     "@type": "Person",
     "name": "Emma Winnard",
@@ -30,16 +41,15 @@
     "https://www.behance.net/emmawinnard1",
     "https://www.linkedin.com/in/emma-winnard-676113319",
     "https://www.youtube.com/@AeanStudios",
-    "https://www.facebook.com/profile.php?id=61587429563793",
-    "https://shopbrandedbyem.etsy.com"
+    "https://www.facebook.com/profile.php?id=61587429563793"
   ],
   "makesOffer": [
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design", "url": "https://aeanstudios.com/websites" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Management", "url": "https://aeanstudios.com/social-media" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Book Cover Design", "url": "https://aeanstudios.com/book-covers" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Management & Content Creation" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand Identity & Logo Design" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Photography" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "YouTube Thumbnail Design" } }
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "YouTube Thumbnail Design", "url": "https://aeanstudios.com/thumbnails" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Logo and Brand Identity Design", "url": "https://aeanstudios.com/logos" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand Photography", "url": "https://aeanstudios.com/photography" } }
   ]
 }
 </script>
@@ -52,44 +62,49 @@
 <link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/book-covers.css">
 </head>
-<body>
+<body class="dark-page home-page">
 
 <nav class="site-nav">
-  <a href="index.html" class="nav-mark">
-    <img src="assets/logos/wordmark_only_ivory.png" alt="AEAN Studios" class="nav-logo-img">
+  <a href="index.html" class="nav-mark" aria-label="AEAN Studios home">
+    <img src="assets/logos/wordmark_only_ivory.png" alt="AEAN Studios" class="nav-logo-img" width="160" height="26">
   </a>
-  <ul class="nav-links">
-          <li><a href="contact.html#brief">Get Started</a></li>
-          <li><a href="index.html" class="is-active">Home</a></li>
-          <li><a href="websites.html">Websites</a></li>
-          <li><a href="work.html">Work</a></li>
-          <li><a href="logos.html">Logos</a></li>
-          <li><a href="thumbnails.html">Thumbnails</a></li><li><a href="book-covers.html">Book Covers</a></li><li><a href="notes.html">Studio Notes</a></li>
-          <li><a href="photography.html">Photography</a></li>
-          <li><a href="social-media.html">Social Media</a></li>
-          <li><a href="about.html">The Studio</a></li>
-  </ul>
   <div class="nav-cta-wrap">
-    <a href="#" class="nav-cta" data-open-contact>Start a Project</a>
+    <a href="contact.html#brief" class="nav-cta">Start a project</a>
   </div>
-  <button class="nav-burger" aria-label="Open menu">
+  <button class="nav-burger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<div class="mobile-menu">
-  <ul>
-          <li><a href="contact.html#brief">Get Started</a></li>
-          <li><a href="index.html" class="is-active">Home</a></li>
-          <li><a href="websites.html">Websites</a></li>
-          <li><a href="work.html">Work</a></li>
-          <li><a href="logos.html">Logos</a></li>
-          <li><a href="thumbnails.html">Thumbnails</a></li><li><a href="book-covers.html">Book Covers</a></li><li><a href="notes.html">Studio Notes</a></li>
-          <li><a href="photography.html">Photography</a></li>
-          <li><a href="social-media.html">Social Media</a></li>
-          <li><a href="about.html">The Studio</a></li>
-    <li><a href="#" data-open-contact>Start a Project</a></li>
-  </ul>
+<div class="mobile-menu" aria-label="Site menu">
+  <div class="menu-grid">
+    <div class="menu-group">
+      <p class="menu-label">For businesses</p>
+      <ul>
+        <li><a href="websites.html">Websites</a></li>
+        <li><a href="social-media.html">Social Media</a></li>
+      </ul>
+    </div>
+    <div class="menu-group">
+      <p class="menu-label">For creatives</p>
+      <ul>
+        <li><a href="book-covers.html">Book Covers</a></li>
+        <li><a href="thumbnails.html">Thumbnails</a></li>
+      </ul>
+    </div>
+    <div class="menu-group">
+      <p class="menu-label">The studio</p>
+      <ul>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="notes.html">Notes</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="menu-foot">
+    <a href="contact.html#brief" class="nav-cta">Start a project</a>
+    <a href="mailto:hello@aeanstudios.com" class="menu-mail">hello@aeanstudios.com</a>
+  </div>
 </div>
 
 
@@ -105,21 +120,21 @@
 
   <div class="hero-logo-reveal">
     <aean-logo class="hero-aean-logo" no-tagline manual aria-label="AEAN Studios"></aean-logo>
-    <h1 class="hero-logo-tagline">Websites, Book Covers &amp; Social Media</h1>
+    <h1 class="hero-logo-tagline">Design for small businesses &amp; creatives</h1>
   </div>
 
   <div class="hero-content container">
     <div class="hero-foot hero-foot-timed">
-      <p class="hero-sub">Websites, book covers and social media management, built around the story behind your business, not a template dropped on top of it.</p>
+      <p class="hero-sub">Websites and social media for small businesses, and book covers and thumbnails for authors and creators, all designed by me from a small studio in Wigan.</p>
       <div class="hero-actions">
         <a href="contact.html#brief" class="btn btn-bronze">
-          Get Started
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          Start a project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
         <a href="work.html" class="btn btn-dark">
-          View the Work
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-      </a>
+          See the work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </div>
@@ -129,27 +144,88 @@
   </div>
 </header>
 
-<!-- ============ PHILOSOPHY STRIP ============ -->
-<section class="philosophy section-tight">
-  <div class="container philosophy-grid">
-    <p class="eyebrow reveal">The Studio</p>
-    <p class="philosophy-text reveal">
-      AEAN Studios takes its name from <span class="serif-italic">Aeaea</span>, the island of Circe.
-      A place apart: remote, cultivated, instinctive, charged with transformation.
-      Wild ideas are not softened here. <span class="serif-italic">They are shaped.</span>
-    </p>
-    <a href="about.html" class="text-link reveal">Read the Full Story →</a>
+<!-- ============ WHAT I DO: two audiences ============ -->
+<section class="offers section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">What I do</p>
+      <h2 class="size-h2">Design for the people <span class="serif-italic">behind the work.</span></h2>
+    </div>
+    <div class="offers-grid">
+      <div class="offer reveal">
+        <p class="offer-label">For small businesses</p>
+        <h3>A website people trust, and a feed that keeps showing up.</h3>
+        <p>Most of my business clients come to me because they want the technical side off their plate. I design and build the website, set it up so Google and AI search tools understand what you do, and if you'd like, keep your social media running as well.</p>
+        <div class="offer-rows">
+          <a href="websites.html" class="offer-row"><span>Websites</span><span class="offer-price">from £200</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          <a href="social-media.html" class="offer-row"><span>Social media</span><span class="offer-price">from £120 a month</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="offer reveal">
+        <p class="offer-label">For authors and creators</p>
+        <h3>Covers and thumbnails that make someone stop scrolling.</h3>
+        <p>Book covers for independent authors, from the first sketch through to print-ready wraps, and YouTube thumbnails designed to be read at a glance on a phone screen, where most people will see them.</p>
+        <div class="offer-rows">
+          <a href="book-covers.html" class="offer-row"><span>Book covers</span><span class="offer-price">from £100</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          <a href="thumbnails.html" class="offer-row"><span>Thumbnails</span><span class="offer-price">from £50</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <p class="offers-also reveal">I also design <a href="logos.html">logos and brand identities</a> and shoot <a href="photography.html">brand photography</a> around Wigan.</p>
   </div>
 </section>
 
-<hr class="divider container">
+<!-- ============ WEBSITES SPOTLIGHT ============ -->
+<section class="web-spot section">
+  <div class="container web-spot-grid">
+    <div class="web-spot-media reveal">
+      <div class="web-frame"><span class="web-dots"><i></i><i></i><i></i></span><span class="web-url">aeanstudios.com</span></div>
+      <img src="assets/projects/websites/aean-hero.jpg" alt="The AEAN Studios home page, with the animated logo over a misty forest" loading="lazy">
+    </div>
+    <div class="web-spot-content">
+      <p class="eyebrow reveal">Websites</p>
+      <h2 class="reveal">A website that does <span class="serif-italic">some of the selling.</span></h2>
+      <p class="reveal">I design and build websites for small businesses that want to look established without having to learn the technical side themselves. Each one is planned around what your customers search for, quick to load on a phone, and can grow to include bookings, a shop, galleries or something interactive.</p>
+      <p class="reveal">The site you're on now is one of them, and so is the website for EMH Northwest, a building firm with its own page for every service it wants to be found for.</p>
+      <div class="web-spot-ctas reveal">
+        <a href="websites.html" class="btn btn-dark">
+          How I build websites
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="contact.html?service=website#brief" class="text-link">Start a website brief →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOCIAL MEDIA SPOTLIGHT ============ -->
+<section class="social-spotlight section">
+  <div class="container social-spotlight-grid">
+    <div class="social-spotlight-media reveal">
+      <img src="assets/social/santi-post.jpg" alt="Santi skincare Instagram content design" loading="lazy" class="ssm-a">
+      <img src="assets/social/solara-post.jpg" alt="Solara Studio Instagram content design" loading="lazy" class="ssm-b">
+    </div>
+    <div class="social-spotlight-content">
+      <p class="eyebrow reveal">Social Media Management</p>
+      <h2 class="reveal">A feed that looks<br><span class="serif-italic">like it belongs to you.</span></h2>
+      <p class="reveal">Strategy, content design, captions, scheduling and community management, handled for you so your feed stays consistent without you having to think about it, and built around the brand you already have.</p>
+      <div class="social-spotlight-ctas reveal">
+        <a href="social-media.html" class="btn btn-dark">
+          See how it works
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="contact.html?service=social#brief" class="text-link">Ask about social media →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ============ BOOKSHELF (css/book-covers.css, js/book-shelf.js) ============ -->
 <section class="home-shelf">
   <div class="container home-shelf-head">
-    <p class="eyebrow reveal">Book Covers</p>
+    <p class="eyebrow reveal">Book covers</p>
     <h2 class="size-h2 reveal">Covers built to hold <span class="serif-italic">the whole story.</span></h2>
-    <a href="book-covers.html" class="text-link reveal">See the Book Covers Page →</a>
+    <a href="book-covers.html" class="text-link reveal">See the book covers →</a>
   </div>
 <section class="bs-wall" aria-label="Bookshelf">
   <p class="bs-instruction">Choose a book to take it off the shelf.</p>
@@ -253,20 +329,47 @@
 </div>
 
 
+<!-- ============ THUMBNAILS + REVIEWS ============ -->
+<section class="thumb-proof section">
+  <div class="container">
+    <div class="thumb-proof-head">
+      <div class="section-head reveal">
+        <p class="eyebrow">YouTube thumbnails</p>
+        <h2 class="size-h2">Made to be read <span class="serif-italic">in a second.</span></h2>
+      </div>
+      <a href="thumbnails.html" class="text-link reveal">See all thumbnails →</a>
+    </div>
+    <div class="thumb-proof-grid reveal">
+      <img src="assets/thumbnails/the-keeper-ocean.jpg" alt="Thumbnail for The Keeper: a white sea serpent rising over a fleet of sailing ships at sunset" loading="lazy">
+      <img src="assets/thumbnails/the-keeper-alt.jpg" alt="Alternate thumbnail for The Keeper" loading="lazy">
+      <img src="assets/thumbnails/lighthouse.jpg" alt="Thumbnail for The Light Isn't For Ships, a lighthouse story" loading="lazy">
+    </div>
+    <div class="thumb-proof-quotes">
+      <blockquote class="reveal">
+        <p>“I have ordered several thumbnails, a banner, and a PFP for my several channels and have been very happy with each purchase. The prices are fair, the quality is excellent, and the speed and communication is very professional. Very fortunate to be working with this artist!”</p>
+        <cite><b>Dubach The Keeper</b>YouTube creator, thumbnails, banner and profile picture</cite>
+      </blockquote>
+      <blockquote class="reveal">
+        <p>“Very talented and professional. I would definitely recommend their services! They know what makes people click on the video!”</p>
+        <cite><b>VVlatsis</b>YouTube creator, thumbnail</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
 <!-- ============ SELECTED WORK ============ -->
 <section class="work-preview section">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">Selected Work</p>
+      <p class="eyebrow">Selected work</p>
       <h2 class="size-h2">Work worth <span class="serif-italic">wanting.</span></h2>
     </div>
   </div>
 
-  <div class="work-rail">
+  <div class="container work-grid">
     <a href="projects/beneath-your-fears.html" class="work-card reveal">
       <div class="work-card-img"><img src="assets/projects/beneath-your-fears/card.jpg" alt="Beneath Your Fears book cover: six doors, two open with red light, and the title in white serif capitals" loading="lazy"></div>
       <div class="work-card-meta">
-        <span class="work-card-index">01</span>
         <h3>Beneath Your Fears</h3>
         <p>Horror Book Cover</p>
       </div>
@@ -274,7 +377,6 @@
     <a href="projects/solara.html" class="work-card reveal">
       <div class="work-card-img"><img src="assets/covers/solara.jpg" alt="Solara Studio brand identity" loading="lazy"></div>
       <div class="work-card-meta">
-        <span class="work-card-index">02</span>
         <h3>Solara Studio</h3>
         <p>Identity &amp; Brand World</p>
       </div>
@@ -282,7 +384,6 @@
     <a href="projects/santi.html" class="work-card reveal">
       <div class="work-card-img"><img src="assets/covers/santi.jpg" alt="Santi skincare brand identity" loading="lazy"></div>
       <div class="work-card-meta">
-        <span class="work-card-index">03</span>
         <h3>Santi</h3>
         <p>Brand Identity &amp; Packaging</p>
       </div>
@@ -290,7 +391,6 @@
     <a href="projects/julie-cummins.html" class="work-card reveal">
       <div class="work-card-img"><img src="assets/covers/julie-cummins.jpg" alt="Julie Cummins Lymphatic Therapy brand identity" loading="lazy"></div>
       <div class="work-card-meta">
-        <span class="work-card-index">04</span>
         <h3>Julie Cummins</h3>
         <p>Identity &amp; Wellness Branding</p>
       </div>
@@ -298,7 +398,6 @@
     <a href="projects/knight-errant.html" class="work-card reveal">
       <div class="work-card-img"><img src="assets/projects/knight-errant/02.jpg" alt="Knight Errant book cover design" loading="lazy"></div>
       <div class="work-card-meta">
-        <span class="work-card-index">05</span>
         <h3>Knight Errant</h3>
         <p>Book Cover Illustration</p>
       </div>
@@ -306,7 +405,6 @@
     <a href="projects/dtd.html" class="work-card reveal">
       <div class="work-card-img"><img src="assets/covers/dtd.jpg" alt="DTD Real Estate brand identity" loading="lazy"></div>
       <div class="work-card-meta">
-        <span class="work-card-index">06</span>
         <h3>Dory Tucker Doyle</h3>
         <p>Real Estate Identity</p>
       </div>
@@ -315,96 +413,9 @@
 
   <div class="container work-preview-foot reveal">
     <a href="work.html" class="btn btn-light">
-      View All Projects
+      See all the work
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
     </a>
-  </div>
-</section>
-
-<!-- ============ SERVICES ============ -->
-<section class="services section">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">What I Do</p>
-      <h2 class="size-h2">One studio.<br><span class="serif-italic">Every visual touchpoint.</span></h2>
-    </div>
-    <div class="services-list">
-      <a href="websites.html" class="service-row service-row-link reveal">
-        <h3>Website Design</h3>
-        <p>Custom-coded websites built to be found on Google and in AI answers. From £200 for the design and code.</p>
-      </a>
-      <a href="book-covers.html" class="service-row service-row-link reveal">
-        <h3>Book Cover Design</h3>
-        <p>Covers that sell the feeling of a story before the first page.</p>
-      </a>
-      <a href="social-media.html" class="service-row service-row-link reveal">
-        <h3>Social Media Management &amp; Design</h3>
-        <p>Cohesive content systems that keep a brand recognisable at a glance.</p>
-      </a>
-      <a href="logos.html" class="service-row service-row-link reveal">
-        <h3>Brand Identity &amp; Logo Design</h3>
-        <p>Marks, systems and visual languages built to outlast trends.</p>
-      </a>
-      <div class="service-row reveal">
-        <h3>Illustration</h3>
-        <p>Hand-developed artwork, from concept sketch to finished piece.</p>
-      </div>
-      <a href="thumbnails.html" class="service-row service-row-link reveal">
-        <h3>YouTube Thumbnails</h3>
-        <p>High-impact frames designed to win the click without losing the brand.</p>
-      </a>
-      <a href="photography.html" class="service-row service-row-link reveal">
-        <h3>Ad Campaigns &amp; Photography</h3>
-        <p>Image-led campaigns across print, outdoor and digital placements.</p>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ GET STARTED (links into contact.html#brief) ============ -->
-<section class="get-started section">
-  <div class="container get-started-inner">
-    <div>
-      <p class="eyebrow reveal">Get Started</p>
-      <h2 class="size-h2 reveal">Not sure what you need, <span class="serif-italic">or what it costs?</span></h2>
-      <p class="get-started-text reveal">Pick the services you're after, set a rough budget and see estimated packages straight away. It takes about two minutes, and the brief comes straight to me.</p>
-    </div>
-    <div class="get-started-actions reveal">
-      <p class="get-started-label">Start with</p>
-      <div class="get-started-links">
-        <a href="contact.html?service=website#brief">Website design</a>
-        <a href="contact.html?service=cover#brief">Book covers</a>
-        <a href="contact.html?service=social#brief">Social media</a>
-        <a href="contact.html?service=brand#brief">Brand identity</a>
-        <a href="contact.html?service=photo#brief">Photography</a>
-      </div>
-      <a href="contact.html#brief" class="btn btn-bronze">
-        Get Started
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SOCIAL MEDIA SPOTLIGHT ============ -->
-<section class="social-spotlight section">
-  <div class="container social-spotlight-grid">
-    <div class="social-spotlight-media reveal">
-      <img src="assets/social/santi-post.jpg" alt="Santi skincare Instagram content design" loading="lazy" class="ssm-a">
-      <img src="assets/social/solara-post.jpg" alt="Solara Studio Instagram content design" loading="lazy" class="ssm-b">
-    </div>
-    <div class="social-spotlight-content">
-      <p class="eyebrow reveal">Social Media Management</p>
-      <h2 class="reveal">A feed that looks<br><span class="serif-italic">like it belongs to you.</span></h2>
-      <p class="reveal">Strategy, content design, captions, scheduling and community management, handled end to end so a brand's feed stays consistent without the owner having to think about it. Built around the identity that's already there, not a generic template dropped on top.</p>
-      <div class="social-spotlight-ctas reveal">
-        <a href="social-media.html" class="btn btn-dark">
-          See How It Works
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
-        <button class="btn-sm-outline" data-open-contact="Social Media Management">Book a Consultation</button>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -414,38 +425,33 @@
     <img src="assets/projects/beneath-your-fears/00-hero-stack.jpg" alt="Two copies of Beneath Your Fears stacked at an angle, showing the six-door front cover and the spine" loading="lazy">
   </div>
   <div class="feature-case-content">
-    <p class="eyebrow reveal">Case Study 01</p>
+    <p class="eyebrow reveal">Featured case study</p>
     <h2 class="reveal">Beneath <span class="serif-italic">Your Fears</span></h2>
     <p class="reveal">A horror anthology cover built on one rule, that every story gets its own door, taken from the author's first mockup through three concepts, five title treatments and a single red to a finished paperback wrap and Kindle cover.</p>
-    <a href="projects/beneath-your-fears.html" class="text-link reveal">View the Case Study →</a>
+    <a href="projects/beneath-your-fears.html" class="text-link reveal">Read the case study →</a>
   </div>
 </section>
 
-<!-- ============ TESTIMONIAL ============ -->
-<section class="testimonial section">
-  <div class="container">
-    <p class="testimonial-quote reveal serif-italic">"Working with AEAN felt like finally being understood. What came back wasn't just a logo, it was a whole world that felt entirely, unmistakably ours."</p>
-    <p class="testimonial-name reveal">Client, Brand Identity Project</p>
-  </div>
-</section>
-
-<!-- ============ ETSY / CONTACT CTA ============ -->
-<section class="cta-band">
-  <div class="container cta-band-grid">
-    <div class="cta-block reveal">
-      <p class="eyebrow">Templates &amp; Resources</p>
-      <h3>Take the studio home.</h3>
-      <p>Curated design templates, available now on Etsy.</p>
-      <a href="https://shopbrandedbyem.etsy.com" target="_blank" rel="noopener" class="text-link">Visit the Shop ↗</a>
+<!-- ============ GET STARTED (links into contact.html#brief) ============ -->
+<section class="get-started section">
+  <div class="container get-started-inner">
+    <div>
+      <p class="eyebrow reveal">Start a project</p>
+      <h2 class="size-h2 reveal">Not sure what you need, <span class="serif-italic">or what it costs?</span></h2>
+      <p class="get-started-text reveal">Pick what you need, set a rough budget and you'll see estimated packages straight away. It takes about two minutes, the brief comes straight to me, and I usually reply within a day.</p>
     </div>
-    <div class="cta-block cta-block-main reveal">
-      <p class="eyebrow">Start a Project</p>
-      <h3>Have something <span class="serif-italic">worth building?</span></h3>
-      <p>One click sends your email straight to my inbox. I read everything myself.</p>
-      <button class="btn btn-bronze" data-open-contact>
-        Get in Touch
+    <div class="get-started-actions reveal">
+      <p class="get-started-label">Start with</p>
+      <div class="get-started-links">
+        <a href="contact.html?service=website#brief">Website</a>
+        <a href="contact.html?service=social#brief">Social media</a>
+        <a href="contact.html?service=cover#brief">Book cover</a>
+        <a href="contact.html?service=thumbs#brief">Thumbnails</a>
+      </div>
+      <a href="contact.html#brief" class="btn btn-bronze">
+        Start your brief
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-      </button>
+      </a>
     </div>
   </div>
 </section>
@@ -453,11 +459,11 @@
 <section class="newsletter-strip">
   <div class="container">
     <p class="eyebrow">Newsletter</p>
-    <h2 class="serif-italic">Tips like this, in your inbox.</h2>
-    <p class="newsletter-strip-sub">Practical design and marketing advice for small business owners. No spam, unsubscribe whenever.</p>
+    <h2 class="serif-italic">Letters from the studio.</h2>
+    <p class="newsletter-strip-sub">Practical design and marketing ideas for small businesses and creatives, sent now and then. Unsubscribe whenever you like.</p>
     <button class="btn btn-bronze" type="button" data-open-newsletter>
-      Join the Newsletter
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      Join the newsletter
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
     </button>
   </div>
 </section>
@@ -465,76 +471,61 @@
 <footer class="site-footer">
   <div class="footer-top">
     <div class="footer-brand">
-      <div class="nav-mark">
-        <img src="assets/logos/wordmark_only_ivory.png" alt="AEAN Studios" class="nav-logo-img footer-logo-img">
-      </div>
-      <p>Visual identity, illustration and image-led design for brands built to be remembered. Based in the UK, working with clients everywhere.</p>
+      <a href="index.html" class="nav-mark" aria-label="AEAN Studios home">
+        <img src="assets/logos/wordmark_only_ivory.png" alt="AEAN Studios" class="nav-logo-img footer-logo-img" width="160" height="26" loading="lazy">
+      </a>
+      <p>Websites and social media for small businesses, and book covers and thumbnails for creatives. Based in Wigan and working with clients across the UK and further afield.</p>
+    </div>
+    <div class="footer-col">
+      <h4>For businesses</h4>
+      <ul>
+        <li><a href="websites.html">Websites</a></li>
+        <li><a href="social-media.html">Social Media</a></li>
+        <li><a href="logos.html">Logos</a></li>
+        <li><a href="photography.html">Photography</a></li>
+      </ul>
+      <h4 class="footer-sub">For creatives</h4>
+      <ul>
+        <li><a href="book-covers.html">Book Covers</a></li>
+        <li><a href="thumbnails.html">Thumbnails</a></li>
+      </ul>
     </div>
     <div class="footer-col">
       <h4>Studio</h4>
       <ul>
-        <li><a href="work.html">Selected Work</a></li>
-        <li><a href="websites.html">Website Design</a></li>
-        <li><a href="contact.html#brief">Get Started</a></li>
-          <li><a href="about.html">The Studio</a></li>
-        <li><a href="logos.html">Logos &amp; Marks</a></li>
-        <li><a href="photography.html">Photography</a></li>
-        <li><a href="thumbnails.html">Thumbnails</a></li><li><a href="book-covers.html">Book Covers</a></li><li><a href="notes.html">Studio Notes</a></li><li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="ai.html">Design and AI</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="https://shopbrandedbyem.etsy.com" target="_blank" rel="noopener">Template shop ↗</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Connect</h4>
+      <h4>Contact</h4>
       <ul>
-        <li><a href="https://www.instagram.com/aeanstudios/" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="https://www.behance.net/emmawinnard1" target="_blank" rel="noopener">Behance</a></li>
-        <li><a href="https://www.linkedin.com/in/emma-winnard-676113319" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="https://www.youtube.com/@AeanStudios" target="_blank" rel="noopener">YouTube</a></li>
-        <li><a href="https://www.facebook.com/profile.php?id=61587429563793" target="_blank" rel="noopener">Facebook</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Shop &amp; Enquire</h4>
-      <ul>
-        <li><a href="https://shopbrandedbyem.etsy.com" target="_blank" rel="noopener">Etsy Templates ↗</a></li>
-        <li><a href="#" data-open-contact>Start a Project</a></li>
+        <li><a href="contact.html#brief">Start a project</a></li>
         <li><a href="mailto:hello@aeanstudios.com">hello@aeanstudios.com</a></li>
+        <li><a href="https://www.instagram.com/aeanstudios/" target="_blank" rel="noopener">Instagram ↗</a></li>
+        <li><a href="https://www.linkedin.com/in/emma-winnard-676113319" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        <li><a href="https://www.behance.net/emmawinnard1" target="_blank" rel="noopener">Behance ↗</a></li>
+        <li><a href="https://www.youtube.com/@AeanStudios" target="_blank" rel="noopener">YouTube ↗</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61587429563793" target="_blank" rel="noopener">Facebook ↗</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 AEAN Studios. All rights reserved.</span>
-    <span><a href="#" data-open-cookie-prefs>Manage Cookies</a></span>
-    <span>Built on the philosophy of Aeaea, instinct held with discipline.</span>
+    <span>© 2026 AEAN Studios</span>
+    <span class="footer-legal"><a href="privacy.html">Privacy</a><a href="#" data-open-cookie-prefs>Cookie settings</a></span>
   </div>
 </footer>
-
-<div class="contact-modal-backdrop"></div>
-<div class="contact-modal" role="dialog" aria-modal="true" aria-label="Start a project">
-  <button class="contact-modal-close" aria-label="Close">&times;</button>
-  <h3 class="serif-italic">Let's begin.</h3>
-  <p class="lead">Send your email and a line about the project. It opens directly in your mail app, addressed to me, and I reply personally, usually within a day.</p>
-  <form>
-    <label for="cm-name">Name</label>
-    <input type="text" id="cm-name" name="name" placeholder="Your name" required>
-    <label for="cm-email">Email</label>
-    <input type="email" id="cm-email" name="email" placeholder="you@email.com" required>
-    <label for="cm-message">A little about the project</label>
-    <textarea id="cm-message" name="message" placeholder="What are you looking to create?"></textarea>
-    <button type="submit" class="contact-modal-submit">Send to Emma</button>
-  </form>
-  <div class="success-msg">
-    <img src="assets/logos/lion_mark_only.png" alt="" class="seal-mini">
-    <h3 class="serif-italic">Your mail app is opening</h3>
-    <p class="lead">If nothing happened, email me directly at hello@aeanstudios.com</p>
-  </div>
-</div>
 
 <div class="newsletter-modal-backdrop"></div>
 <div class="newsletter-modal" role="dialog" aria-modal="true" aria-label="Join the newsletter">
   <button class="newsletter-modal-close" aria-label="Close" data-close-newsletter>&times;</button>
   <p class="eyebrow">Newsletter</p>
-  <h3 class="serif-italic">Don't miss the next one.</h3>
-  <p class="lead">Practical design and marketing tips for small business owners. No noise, unsubscribe whenever.</p>
+  <h3 class="serif-italic">Join the newsletter.</h3>
+  <p class="lead">Practical design and marketing ideas for small businesses and creatives, sent now and then. Unsubscribe whenever you like.</p>
   <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="newsletter">
     <p class="visually-hidden">
@@ -545,18 +536,12 @@
     <button type="submit" class="newsletter-modal-submit">Subscribe</button>
   </form>
   <button class="newsletter-modal-decline" type="button" data-close-newsletter>No thanks</button>
+  <p class="newsletter-modal-privacy">Your email is only used to send the newsletter. <a href="privacy.html">Privacy policy</a></p>
   <div class="success-msg">
     <img src="assets/logos/lion_mark_only.png" alt="" class="seal-mini">
     <h3 class="serif-italic">You're on the list</h3>
     <p class="lead">Thank you, look out for the first email soon.</p>
   </div>
-</div>
-
-<div class="quick-contact">
-  <button class="quick-contact-btn" data-open-contact>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 7l9 6 9-6M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>
-    <span class="full">Get in Touch</span>
-  </button>
 </div>
 
 <div class="scroll-seal">
