@@ -28,4 +28,5 @@ Netlify Forms are detected from the HTML at deploy time (`newsletter` and `found
 - Services, descriptions and prices: `js/plan-catalogue.js` (the only place prices live; `from: null` shows "priced after a quick chat").
 - The AI: `netlify/functions/plan.mjs`, served at `/api/plan`. It needs an `ANTHROPIC_API_KEY` environment variable in Netlify. `PLAN_MODEL` optionally changes the model.
 - Without the key, or if the AI fails, `js/plan-rules.js` builds the plan instead, so the page always works.
-- Sent plans arrive as Netlify form submissions under `plan-request`.
+- Visitors give their first name and email to get the plan. `RESEND_API_KEY` lets the function email them the plan and send a copy to hello@ (templates in `netlify/lib/plan-email.mjs`). `PLAN_FROM` and `PLAN_NOTIFY` optionally change the sender and the copy address.
+- Every plan is also saved as a Netlify form submission under `plan-request`, so no lead is lost if email isn't set up.

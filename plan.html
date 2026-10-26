@@ -85,7 +85,7 @@
   <div class="container">
     <p class="eyebrow reveal">Plan builder</p>
     <h1 class="reveal">A plan made to order<br><span class="serif-italic">for your business.</span></h1>
-    <p class="archive-sub plan-intro reveal">Tell me about your business in your own words, what you do, who your customers are and what you've tried so far, and you'll get a plan of what would help most, in the order I'd do it, with starting prices. You don't need to know any marketing terms, and it takes about two minutes.</p>
+    <p class="archive-sub plan-intro reveal">Tell me about your business in your own words, what you do, who your customers are and what you've tried so far, and you'll get a plan of what would help most, in the order I'd do it, with starting prices, sent straight to your inbox. You don't need to know any marketing terms, and it takes about two minutes.</p>
   </div>
 </header>
 
@@ -151,14 +151,23 @@
       </fieldset>
     </details>
 
+    <fieldset class="plan-contact">
+      <legend>Where should I send your plan?</legend>
+      <div class="plan-contact-row">
+        <label>Your first name<input name="name" required autocomplete="given-name" maxlength="80"></label>
+        <label>Your email<input type="email" name="email" required autocomplete="email" maxlength="200"></label>
+      </div>
+      <label class="plan-optin"><input type="checkbox" name="newsletter" value="yes"><span>Also send me the newsletter, with practical design and marketing ideas now and then. You can unsubscribe whenever you like.</span></label>
+    </fieldset>
+
     <p class="visually-hidden"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></p>
     <div class="plan-actions">
-      <button type="submit" class="btn btn-bronze plan-go">Build my plan
+      <button type="submit" class="btn btn-bronze plan-go">Show and email my plan
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </button>
       <p class="plan-error" aria-live="polite"></p>
     </div>
-    <p class="plan-note">What you write is sent to an AI model to put the plan together. I don't keep it unless you choose to send the plan to me. <a href="privacy.html">Privacy policy</a></p>
+    <p class="plan-note">Your plan appears here and lands in your inbox, and I get a copy so I can help if you'd like. What you write is sent to an AI model to put the plan together, and your email is only used to send your plan unless you tick the newsletter box. <a href="privacy.html">Privacy policy</a></p>
   </form>
 
   <div class="plan-loading" hidden aria-live="polite">
@@ -171,7 +180,7 @@
 
 <form name="plan-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
   <input type="hidden" name="form-name" value="plan-request">
-  <input name="bot-field"><input name="name"><input name="email"><textarea name="note"></textarea>
+  <input name="bot-field"><input name="name"><input name="email"><input name="newsletter"><input name="emailed">
   <textarea name="business"></textarea><textarea name="answers"></textarea><textarea name="plan"></textarea><input name="source">
 </form>
 

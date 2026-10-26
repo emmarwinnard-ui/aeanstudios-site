@@ -10,7 +10,7 @@ const has = (text, re) => re.test(text);
 const KINDS = {
   food: /(?:caf[eé])(?![a-z])|\b(restaurant|coffee|bar|pub|bakery|baker|takeaway|bistro|deli|food|kitchen|catering|caterer|street food|tea ?room)\b/i,
   trades: /\b(builder|building|plumb|electric|roof|joiner|carpent|landscap|garden(er|ing)|decorat|plaster|clean(er|ing)|handyman|kitchen fitt|bathroom|extension|scaffold|mechanic|garage|removal)/i,
-  wellness: /\b(salon|hair|barber|beauty|nails?|lash|brow|massage|therap|physio|yoga|pilates|gym|personal train|fitness|clinic|aesthetic|spa|holistic|counsell)/i,
+  wellness: /\b(salon|hair|barber|beauty|groom|dog|pet|kennel|cattery|nails?|lash|brow|massage|therap|physio|yoga|pilates|gym|personal train|fitness|clinic|aesthetic|spa|holistic|counsell)/i,
   products: /\b(shop|products?|etsy|handmade|candles?|jewel|clothing|boutique|prints|crafts?|sell online|ecommerce|e-commerce|stock)\b/i,
   author: /\b(author|novel|my book|books|writer|writing|publish|kindle|kdp|amazon|paperback|hardback|series|manuscript)\b/i,
   creator: /\b(youtube|youtuber|channel|gaming|twitch|streamer|podcast|subscribers|uploads?|videos? (each|every) week)\b/i,
@@ -19,7 +19,7 @@ const KINDS = {
 };
 
 const KIND_LABEL = {
-  food: 'a food and drink business', trades: 'a trade business', wellness: 'a beauty, health or wellness business',
+  food: 'a food and drink business', trades: 'a trade business', wellness: 'an appointment-based business, like beauty, wellness or pet care',
   products: 'a business selling products', author: 'an author', creator: 'a YouTuber or content creator',
   pro: 'a service business', venue: 'a venue or events business', local: 'a local business'
 };

@@ -97,3 +97,61 @@ export const CATALOGUE = {
 export const PLATFORMS = ['Instagram', 'Facebook', 'TikTok', 'LinkedIn', 'YouTube', 'Pinterest', 'Google Business Profile'];
 
 export const byId = Object.fromEntries(CATALOGUE.services.map(s => [s.id, s]));
+
+/* ---------- shared helpers: used by the page, the email and the AI function ---------- */
+export const PHASES = { first: 'Start here', next: 'Next', later: "When you're ready" };
+export const gbp = (n) => '£' + Number(n).toLocaleString('en-GB');
+const ONE_OFF = new Set(['project', 'each', 'shoot']);
+
+export function priceText(s, qty = 1) {
+  if (s.from == null) return 'Priced after a quick chat';
+  const per = s.unit === 'month' ? ' a month' : '';
+  const q = ONE_OFF.has(s.unit) && s.unit !== 'project' && qty > 1 ? qty : 1;
+  const lo = s.from * q, hi = s.to == null ? null : s.to * q;
+  const forN = q > 1 ? ` for ${q}` : '';
+  if (hi == null) return `from ${gbp(lo)}${per}${forN}`;
+  if (hi === lo) return `${gbp(lo)}${per}${forN}`;
+  return `${gbp(lo)} to ${gbp(hi)}${per}${forN}`;
+}
+
+export function totals(plan) {
+  let oneOff = 0, monthly = 0, chat = 0;
+  for (const p of plan.phases) for (const it of p.items) {
+    const s = byId[it.id];
+    if (!s) continue;
+    if (s.from == null) { chat++; continue; }
+    const q = s.unit !== 'project' && s.unit !== 'month' ? it.quantity || 1 : 1;
+    if (s.unit === 'month') monthly += s.from; else oneOff += s.from * q;
+  }
+  return { oneOff, monthly, chat };
+}
+
+export function cadenceText(c) {
+  if (!c) return '';
+  const bits = [];
+  if (c.static) bits.push(`${c.static} ${c.static === 1 ? 'post' : 'posts'}`);
+  if (c.video) bits.push(`${c.video} short ${c.video === 1 ? 'video' : 'videos'}`);
+  if (c.stories) bits.push(`${c.stories} ${c.stories === 1 ? 'story' : 'stories'}`);
+  if (!bits.length) return '';
+  return bits.length > 1 ? `${bits.slice(0, -1).join(', ')} and ${bits[bits.length - 1]} a week` : `${bits[0]} a week`;
+}
+
+export function planAsText(plan) {
+  const lines = [plan.summary, ''];
+  for (const p of plan.phases) {
+    lines.push(PHASES[p.key].toUpperCase());
+    for (const it of p.items) {
+      const s = byId[it.id];
+      lines.push(`- ${s.name} (${priceText(s, it.quantity)}): ${it.details}`);
+      if (it.platforms && it.platforms.length) lines.push(`  Platforms: ${it.platforms.join(', ')}`);
+      if (it.cadence && cadenceText(it.cadence)) lines.push(`  ${cadenceText(it.cadence)}`);
+      if (it.why) lines.push(`  Why: ${it.why}`);
+    }
+    lines.push('');
+  }
+  const t = totals(plan);
+  lines.push(`One-off work from ${gbp(t.oneOff)}. Ongoing each month ${t.monthly ? 'from ' + gbp(t.monthly) : 'nothing yet'}.${t.chat ? ` Plus ${t.chat} priced after a quick chat.` : ''}`);
+  if (plan.notNeeded && plan.notNeeded.length) lines.push('', 'Not needed yet:', ...plan.notNeeded.map(n => `- ${n.label}: ${n.reason}`));
+  if (plan.questions && plan.questions.length) lines.push('', "Things I'd ask you:", ...plan.questions.map(q => `- ${q}`));
+  return lines.join('\n');
+}

@@ -1,12 +1,16 @@
 /* ============================================
    AEAN STUDIOS: PLAN BUILDER (AI)
    POST /api/plan  { text, answers }  ->  { plan }
-   Needs the ANTHROPIC_API_KEY environment variable in Netlify
-   (Site configuration > Environment variables). Without it this
-   returns 503 and the page falls back to the built-in guide.
-   Optional: PLAN_MODEL to change the model.
+   Environment variables (Netlify > Site configuration > Environment variables):
+   ANTHROPIC_API_KEY  the AI. Without it the built-in guide builds the plan.
+   RESEND_API_KEY     emails the plan to the visitor and a copy to Emma.
+   PLAN_MODEL         optional, changes the model.
+   PLAN_FROM          optional sender, default Emma at AEAN Studios <emma@aeanstudios.com>
+   PLAN_NOTIFY        optional, where lead copies go, default hello@aeanstudios.com
    ============================================ */
 import { CATALOGUE, PLATFORMS, byId } from '../../js/plan-catalogue.js';
+import { buildPlanFromRules } from '../../js/plan-rules.js';
+import { visitorEmail, leadEmail } from '../lib/plan-email.mjs';
 
 const MODEL = process.env.PLAN_MODEL || 'claude-sonnet-5-5';
 const MAX_TEXT = 1500;
@@ -123,27 +127,7 @@ export function sanitisePlan(input) {
   };
 }
 
-export default async (req, context) => {
-  if (req.method !== 'POST') return json(405, { error: 'POST only' });
-  const key = process.env.ANTHROPIC_API_KEY;
-  if (!key) return json(503, { error: 'not-configured' });
-
-  let body;
-  try { body = await req.json(); } catch { return json(400, { error: 'bad-json' }); }
-  if (body.website) return json(400, { error: 'bad-request' }); // honeypot
-  const text = String(body.text || '').trim();
-  if (text.length < 20) return json(400, { error: 'too-short' });
-  if (rateLimited(context?.ip || req.headers.get('x-nf-client-connection-ip') || 'unknown')) return json(429, { error: 'rate-limited' });
-
-  const a = body.answers || {};
-  const answers = [
-    a.type && `Type: ${a.type}`,
-    Array.isArray(a.have) && `Already has: ${a.have.length ? a.have.join(', ') : 'nothing ticked'}`,
-    a.monthly && `Monthly budget: ${a.monthly}`,
-    a.start && `Budget to get started: ${a.start}`,
-    a.goal && `Main goal: ${a.goal}`
-  ].filter(Boolean).join('\n');
-
+async function aiPlan(key, text, answers) {
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: { 'x-api-key': key, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
@@ -153,17 +137,71 @@ export default async (req, context) => {
       system: SYSTEM,
       tools: [TOOL],
       tool_choice: { type: 'tool', name: 'build_plan' },
-      messages: [{ role: 'user', content: `<business>\n${text.slice(0, MAX_TEXT)}\n</business>\n\n<answers>\n${answers || 'None given'}\n</answers>` }]
+      messages: [{ role: 'user', content: `<business>\n${text}\n</business>\n\n<answers>\n${answers || 'None given'}\n</answers>` }]
     })
   }).catch(() => null);
-
-  if (!res || !res.ok) return json(502, { error: 'ai-unavailable' });
-  const data = await res.json();
-  const block = (data.content || []).find(c => c.type === 'tool_use');
-  if (!block) return json(502, { error: 'no-plan' });
+  if (!res || !res.ok) return null;
+  const data = await res.json().catch(() => null);
+  const block = (data?.content || []).find(c => c.type === 'tool_use');
+  if (!block) return null;
   const plan = sanitisePlan(block.input);
-  if (!plan.phases.length) return json(502, { error: 'empty-plan' });
-  return json(200, { plan });
+  return plan.phases.length ? plan : null;
+}
+
+async function sendEmail(key, msg) {
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${key}`, 'content-type': 'application/json' },
+    body: JSON.stringify(msg)
+  }).catch(() => null);
+  return !!(res && res.ok);
+}
+
+const EMAIL_RE = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]{2,}$/;
+
+export default async (req, context) => {
+  if (req.method !== 'POST') return json(405, { error: 'POST only' });
+
+  let body;
+  try { body = await req.json(); } catch { return json(400, { error: 'bad-json' }); }
+  if (body.website) return json(400, { error: 'bad-request' }); // honeypot
+  const text = String(body.text || '').trim().slice(0, MAX_TEXT);
+  const name = clean(body.name, 80);
+  const email = String(body.email || '').trim().slice(0, 200);
+  if (text.length < 20) return json(400, { error: 'too-short' });
+  if (!name || !EMAIL_RE.test(email)) return json(400, { error: 'contact-needed' });
+  if (rateLimited(context?.ip || req.headers.get('x-nf-client-connection-ip') || 'unknown')) return json(429, { error: 'rate-limited' });
+
+  const a = body.answers || {};
+  const answers = {
+    type: clean(a.type, 20), have: Array.isArray(a.have) ? a.have.map(x => clean(x, 20)).slice(0, 6) : [],
+    start: clean(a.start, 20), monthly: clean(a.monthly, 20), goal: clean(a.goal, 20)
+  };
+  const answersText = [
+    answers.type && `Type: ${answers.type}`,
+    `Already has: ${answers.have.length ? answers.have.join(', ') : 'nothing ticked'}`,
+    answers.monthly && `Monthly budget: ${answers.monthly}`,
+    answers.start && `Budget to get started: ${answers.start}`,
+    answers.goal && `Main goal: ${answers.goal}`
+  ].filter(Boolean).join('\n');
+
+  const key = process.env.ANTHROPIC_API_KEY;
+  const plan = (key && await aiPlan(key, text, answersText)) || buildPlanFromRules(text, answers);
+
+  let emailed = false;
+  const resend = process.env.RESEND_API_KEY;
+  if (resend) {
+    const from = process.env.PLAN_FROM || 'Emma at AEAN Studios <emma@aeanstudios.com>';
+    const notify = process.env.PLAN_NOTIFY || 'hello@aeanstudios.com';
+    const v = visitorEmail(plan, name);
+    const l = leadEmail(plan, { name, email, business: text, answers, newsletter: !!body.newsletter, source: plan.source });
+    const [toVisitor] = await Promise.all([
+      sendEmail(resend, { from, to: [email], reply_to: notify, subject: v.subject, html: v.html, text: v.text }),
+      sendEmail(resend, { from, to: [notify], reply_to: email, subject: l.subject, html: l.html, text: l.text })
+    ]);
+    emailed = toVisitor;
+  }
+  return json(200, { plan, emailed });
 };
 
 export const config = { path: '/api/plan' };
